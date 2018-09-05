@@ -4,20 +4,23 @@ require 'vendor/autoload.php';
 
 use Intervention\Image\ImageManagerStatic as Image;
 
-$image = Image::canvas(100, 100, '#ddd');
+
+$img = Image::canvas(300, 200, '#ddd');
 
 
-$image->rectangle(10, 10, 190, 190);
-
-
-$image->rectangle(5, 5, 195, 195, function ($draw) {
-    $draw->background('#ff0000');
+$img->circle(100, 50, 50, function ($draw) {
+    $draw->background('#0000ff');
 });
 
 
-$image->rectangle(5, 5, 195, 195, function ($draw) {
-    $draw->background('rgba(255, 255, 255, 0.5)');
-    $draw->border(2, '#000');
+$img->circle(10, 100, 100, function ($draw) {
+    $draw->background('#0000ff');
+    $draw->border(1, '#f00');
+});
+
+
+$img->circle(70, 150, 100, function ($draw) {
+    $draw->border(5, '000000');
 });
 
 $image = Image::make('img/slika.jpg')->resize(300, 200)->save("img/slika-2.jpg", 100);
