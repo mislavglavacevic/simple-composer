@@ -4,6 +4,7 @@ require 'vendor/autoload.php';
 
 use Intervention\Image\ImageManagerStatic as Image;
 
+
 $mjera = array(
             10,  10,  
             50,  40, 
@@ -14,27 +15,38 @@ $mjera = array(
             );
 
 
-$slika = imagecreatetruecolor(250, 250);
+$slika = imagecreatetruecolor(300, 300);
 
 
 $pozadina   = imagecolorallocate($slika, 0, 0, 255);
 $boja = imagecolorallocate($slika, 255, 0, 0);
 
 
-imagefilledrectangle($slika, 0, 0, 249, 249, $pozadina);
+
+imagefilledrectangle($slika, 0, 0, 300, 300, $pozadina);
 
 
 imagefilledpolygon($slika, $mjera, 6, $boja);
+
+imageellipse($slika, 150, 150, 250, 250, $boja);
+
 
 
 header('Content-type: image/png');
 imagepng($slika);
 imagedestroy($slika);
 
-$image = Image::make('img/slika.jpg')->resize(350, 250)->save("img/slika-2.jpg", 100);
+
+
+
+$slika = Image::make('img/slika.jpg')->resize(350, 350)->save("img/slika-2.jpg", 100);
 
 
 
 echo '<img src="img/slika-2.jpg" alt=""/>';
 
 ?>
+
+
+
+
