@@ -20,6 +20,7 @@ $slika = imagecreatetruecolor(300, 300);
 
 $pozadina   = imagecolorallocate($slika, 0, 0, 255);
 $boja = imagecolorallocate($slika, 255, 0, 0);
+$boja1 = imagecolorallocate($slika, 255, 255, 255);
 
 
 
@@ -28,7 +29,7 @@ imagefilledrectangle($slika, 0, 0, 300, 300, $pozadina);
 
 imagefilledpolygon($slika, $mjera, 6, $boja);
 
-imageellipse($slika, 150, 150, 250, 250, $boja);
+imageellipse($slika, 150, 150, 299, 299, $boja1);
 
 
 
