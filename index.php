@@ -31,7 +31,7 @@ header('Content-type: image/png');
 imagepng($slika);
 imagedestroy($slika);
 
-$image = Image::make('img/slika.jpg')->resize(300, 200)->save("img/slika-2.jpg", 100);
+$image = Image::make('img/slika.jpg')->resize(350, 250)->save("img/slika-2.jpg", 100);
 
 
 
